@@ -185,6 +185,8 @@ These items carry over:
 - It does not restore the history into the agent automatically. The new agent reads the Markdown file when you tell it to.
 - It does not create, upload, or remove sessions. You do these steps with `doctl`.
 
-## Security
+## Contributing, security and license
 
-To report a security problem, refer to [SECURITY.md](SECURITY.md).
+- To contribute, refer to [CONTRIBUTING.md](CONTRIBUTING.md).
+- To report a security problem, refer to [SECURITY.md](SECURITY.md).
+- This project is licensed under the [Apache License, Version 2.0](LICENSE).
