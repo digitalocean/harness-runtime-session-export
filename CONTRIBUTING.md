@@ -1,6 +1,9 @@
 # Contributing
 
-Thank you for your interest in this repository. It holds `export_transcript.py`, a script that exports the conversation of a DigitalOcean Harness Runtime session to a Markdown file.
+Thank you for your interest in this repository. It holds two scripts:
+
+- `export_transcript.py` exports the conversation of a DigitalOcean Harness Runtime session to a Markdown file. It runs inside the session.
+- `migrate_session.py` moves a session to a new session. It runs on your local computer and calls `doctl`.
 
 By contributing, you agree that your contribution is licensed under the [Apache License, Version 2.0](LICENSE).
 
@@ -35,6 +38,14 @@ The script uses only the Python standard library. It runs inside the session, no
    ```
 
 4. Do steps 2 and 3 for each agent that your change affects.
+
+To test a change to `migrate_session.py`:
+
+1. Check the syntax with `python3 -m py_compile migrate_session.py`.
+2. Create a test session, send it a message, and add some files to its workspace.
+3. Run `python3 migrate_session.py TEST_SESSION_ID`. Make sure that the files arrive in the new session and that the new agent knows the earlier conversation.
+4. Stop the script during a step, then run it again. Make sure that it continues from that step.
+5. Remove the test sessions and the `migrate-TEST_SESSION_ID` folder.
 
 Never commit keys, tokens, session IDs or conversation content.
 

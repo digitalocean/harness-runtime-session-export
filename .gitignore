@@ -1,0 +1,3 @@
+# Working folders of migrate_session.py: they hold a copy of a workspace and a conversation.
+migrate-*/
+__pycache__/
